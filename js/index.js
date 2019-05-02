@@ -46,3 +46,33 @@ cta.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let middleImg = document.querySelector('#middle-img');
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+let headerContent = document.querySelectorAll('.container header nav a');
+headerContent.forEach((header, i) => {
+  header.textContent = siteContent.nav[`nav-item-${i+1}`];
+})
+
+let ctaText = document.querySelector('.cta-text');
+ctaText.textContent = siteContent.cta.h1;
+
+let button = document.querySelector('cta-text button')
+
+let topContentHeader = document.querySelector('.top-content');
+topContentHeader.textContent = siteContent["main-content"]["features-h4"]
+
+let topContentText = document.querySelector('.top-content .text-content');
+// topContentText.textContent = siteContent["main-content"]["features-content"];
+
+let bottomContentHeader = document.querySelectorAll('.bottom-content .text-content h4');
+bottomContentHeader[0].textContent = siteContent["main-content"]["services-h4"];
+
+bottomContentHeader[1].textContent = siteContent["main-content"]["product-h4"];
+
+bottomContentHeader[2].textContent = siteContent["main-content"]["vision-h4"];
+
+let bottomContentText = document.querySelectorAll('.bottom-content .text-content p');
+bottomContentText[0].textContent = siteContent["main-content"]["services-content"];
+
+bottomContentText[1].textContent = siteContent["main-content"]["product-content"];
+
+bottomContentText[2].textContent = siteContent["main-content"]["vision-content"];
